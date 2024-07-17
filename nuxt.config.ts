@@ -7,8 +7,7 @@ export default defineNuxtConfig({
     families: {
       Inter: [400, 500],
       Marmelad: [400],
-      "Alegreya Sans SC": [400, 800],
-      Montserrat: [400, 500, 600, 700],
+      Montserrat: [300, 400, 500, 600, 700],
       Roboto: [400],
     },
   },

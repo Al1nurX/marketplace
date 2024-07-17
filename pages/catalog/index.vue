@@ -1,28 +1,11 @@
 <template>
   <main class="mt-[25px]">
-    <div class="flex items-center justify-between gap-x-5">
-      <img
-        src="/images/banner-1.jpg"
-        alt="Banner"
-        class="h-[526px] w-[428px] rounded-3xl object-cover object-center"
-      />
-      <img
-        src="/images/banner-2.jpg"
-        alt="Banner"
-        class="h-[526px] w-[428px] rounded-3xl object-cover object-center"
-      />
-      <img
-        src="/images/banner-3.jpg"
-        alt="Banner"
-        class="h-[526px] w-[428px] rounded-3xl object-cover object-center"
-      />
-    </div>
-    <div class="my-10">
-      <p class="font-montserrat text-4xl font-medium text-[#181818]">Каталог</p>
+    <div class="my-10 flex">
+      <p class="font-inter text-base font-medium text-[#B3B3B3]">Главная - Каталог - Товары для офисного стола - Письменные принадлежности - Ручки</p>
     </div>
     <div class="mb-10 grid grid-cols-3 gap-6">
       <Catalog
-        to="/catalog"
+        to="/catalog/1"
         title="Письменные принадлежности"
         imgSrc="content.png"
         alt="Content"
@@ -82,7 +65,7 @@
         alt="Content"
       />
     </div>
-    <div class="mb-12 flex items-center justify-between pt-5">
+    <div class="mb-10 flex items-center justify-between pt-5">
       <p class="font-montserrat text-4xl font-light text-[#000]">Новинки</p>
       <button
         class="rounded-3xl bg-[#5810B5] px-11 py-2 font-montserrat text-xl font-semibold text-[#FFF]"
@@ -95,7 +78,7 @@
       <Card />
       <Card />
     </div>
-    <div class="mb-12 flex items-center justify-between pt-5">
+    <div class="mb-10 flex items-center justify-between pt-5">
       <p class="font-montserrat text-4xl font-light text-[#000]">Акции</p>
       <button
         class="rounded-3xl bg-[#51E028] px-11 py-2 font-montserrat text-xl font-semibold text-[#FFF]"
@@ -108,7 +91,7 @@
       <Card />
       <Card />
     </div>
-    <div class="mb-14 pt-24">
+    <div class="mb-12 pt-20">
       <BrandCarousel />
     </div>
   </main>
