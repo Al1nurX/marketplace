@@ -1,3 +1,18 @@
+<script setup>
+const catalogItems = [
+  { id: "1", title: "Письменные принадлежности" },
+  { id: "2", title: "Бумажная продукция" },
+  { id: "3", title: "Школьный текстиль" },
+  { id: "4", title: "Подарки, сувениры" },
+  { id: "5", title: "Хобби и творчество" },
+  { id: "6", title: "Офисная мебель" },
+  { id: "7", title: "Демонстрационные оборудование" },
+  { id: "8", title: "Бытовая химия" },
+  { id: "9", title: "Кожгалантерея" },
+  { id: "10", title: "Государственная символика" },
+];
+</script>
+
 <template>
   <main class="mt-[25px]">
     <div class="flex items-center justify-between gap-x-5">
@@ -22,62 +37,10 @@
     </div>
     <div class="mb-10 grid grid-cols-3 gap-6">
       <Catalog
-        to="/catalog"
-        title="Письменные принадлежности"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Бумажная продукция"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Школьный текстиль"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Подарки, сувениры"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Хобби и творчество"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Офисная мебель"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Демонстрационные оборудование"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Бытовая химия"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Кожгалантерея"
-        imgSrc="content.png"
-        alt="Content"
-      />
-      <Catalog
-        to="/catalog/1"
-        title="Государственная символика"
+        v-for="item in catalogItems"
+        :key="item.id"
+        :to="`/catalog/${item.id}`"
+        :title="item.title"
         imgSrc="content.png"
         alt="Content"
       />
@@ -108,7 +71,7 @@
       <Card />
       <Card />
     </div>
-    <div class="mb-14 pt-24">
+    <div class="-mb-4 pt-24">
       <BrandCarousel />
     </div>
   </main>

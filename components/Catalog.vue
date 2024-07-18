@@ -22,7 +22,7 @@ const props = defineProps({
 <template>
   <NuxtLink
     :to="to"
-    class="hover:img-scale flex h-[320px] w-full flex-col overflow-hidden rounded-2xl border-[0.8px] border-solid border-[#E5E5E5] bg-[#FFF] shadow-lg"
+    class="hover:img-scale flex h-[340px] w-full flex-col overflow-hidden rounded-2xl border-[0.5px] border-solid border-gray-200 bg-[#FFF] shadow-lg"
   >
     <p
       class="z-10 px-6 pb-3 pt-4 font-montserrat text-xl font-bold text-[#1A1919]"
@@ -32,7 +32,7 @@ const props = defineProps({
     <img
       :src="`/images/${imgSrc}`"
       :alt="alt"
-      class="h-60 w-full object-contain object-center transform duration-300 ease-in-out"
+      class="h-60 w-full transform object-contain object-center duration-300 ease-in-out"
     />
   </NuxtLink>
 </template>
