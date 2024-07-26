@@ -38,13 +38,13 @@ const toggleCatalog = () => {
         </button>
       </div>
       <div class="flex items-center justify-between gap-12">
-        <NuxtLink>
+        <NuxtLink to="/favorites">
           <div class="flex items-center justify-center">
             <Icon name="material-symbols-light:favorite-outline" size="32" />
           </div>
         </NuxtLink>
         <div class="relative inline-block">
-          <NuxtLink>
+          <NuxtLink to="/cart">
             <div class="flex items-center justify-center">
               <Icon name="bitcoin-icons:cart-outline" size="32" />
             </div>
@@ -55,7 +55,7 @@ const toggleCatalog = () => {
             <p class="text-xs text-[#FFFFFF]">2</p>
           </div>
         </div>
-        <NuxtLink>
+        <NuxtLink to="/profile">
           <div class="flex items-center justify-center">
             <Icon name="lets-icons:user-alt-light" size="32" />
           </div>

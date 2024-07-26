@@ -14,7 +14,8 @@
     "@nuxtjs/google-fonts": "^3.2.0",
     "nuxt": "^3.12.3",
     "swiper": "^11.1.4",
-    "vue": "latest"
+    "vue": "latest",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "daisyui": "^4.12.10",

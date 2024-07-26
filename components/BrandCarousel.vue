@@ -46,7 +46,7 @@ const modules = [Autoplay, Pagination, Navigation, Mousewheel];
         <img
           :src="brand.logo"
           :alt="brand.name"
-          class="h-[80px] w-[240px] object-contain grayscale filter transition duration-300 ease-in-out hover:grayscale-0 hover:filter"
+          class="h-[80px] w-[240px] object-contain grayscale transition duration-300 ease-in-out hover:grayscale-0"
         />
       </swiper-slide>
       <div className="slider-controler">

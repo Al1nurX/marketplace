@@ -1,15 +1,21 @@
 <script setup>
 const catalogItems = [
-  { id: "1", title: "Письменные принадлежности" },
-  { id: "2", title: "Бумажная продукция" },
-  { id: "3", title: "Школьный текстиль" },
-  { id: "4", title: "Подарки, сувениры" },
-  { id: "5", title: "Хобби и творчество" },
-  { id: "6", title: "Офисная мебель" },
-  { id: "7", title: "Демонстрационные оборудование" },
-  { id: "8", title: "Бытовая химия" },
-  { id: "9", title: "Кожгалантерея" },
-  { id: "10", title: "Государственная символика" },
+  { id: "1", routeName: "pismennye-prinadlezhnosti", title: "Письменные принадлежности" },
+  { id: "2", routeName: "bumazhnaia-produkcia", title: "Бумажная продукция" },
+  { id: "3", routeName: "shkolnyy-tekstil", title: "Школьный текстиль" },
+  { id: "4", routeName: "podarki-suveniry", title: "Подарки, сувениры" },
+  { id: "5", routeName: "khobbi-i-tvorchestvo", title: "Хобби и творчество" },
+  { id: "6", routeName: "ofisnaya-mebel", title: "Офисная мебель" },
+  { id: "7", routeName: "demonstracionnye-oborudovanie", title: "Демонстрационные оборудование" },
+  { id: "8", routeName: "bytovaya-himija", title: "Бытовая химия" },
+  { id: "9", routeName: "kоzhgalantereya", title: "Кожгалантерея" },
+  { id: "10", routeName: "gosudarstvennaya-simbolika", title: "Государственная символика" },
+];
+
+const categories = [
+  { id: "1", catId: "1", catRouteName: "pismennye-prinadlezhnosti", routeName: "ruchki", title: "Ручка шариковая" },
+  { id: "2", catId: "1", catRouteName: "pismennye-prinadlezhnosti", routeName: "ruchki", title: "Ручка гелевая" },
+  { id: "3", catId: "1", catRouteName: "pismennye-prinadlezhnosti", routeName: "karandashi", title: "Карандаш" },
 ];
 </script>
 
@@ -39,7 +45,7 @@ const catalogItems = [
       <Catalog
         v-for="item in catalogItems"
         :key="item.id"
-        :to="`/catalog/${item.id}`"
+        :to="`/catalog/${item.routeName}`"
         :title="item.title"
         imgSrc="content.png"
         alt="Content"
@@ -54,9 +60,14 @@ const catalogItems = [
       </button>
     </div>
     <div class="mb-10 flex justify-between">
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        v-for="category in categories"
+        :key="category.id"
+        :to="`/catalog/${category.catRouteName}/${category.routeName}`"
+        :title="category.title"
+        imgSrc="/images/card-1.jpg"
+        alt="Card"
+      />
     </div>
     <div class="mb-12 flex items-center justify-between pt-5">
       <p class="font-montserrat text-4xl font-light text-[#000]">Акции</p>
@@ -67,9 +78,14 @@ const catalogItems = [
       </button>
     </div>
     <div class="mb-10 flex justify-between">
-      <Card />
-      <Card />
-      <Card />
+      <Card
+        v-for="category in categories"
+        :key="category.id"
+        :to="`/catalog/${category.catRouteName}/${category.routeName}`"
+        :title="category.title"
+        imgSrc="/images/card-1.jpg"
+        alt="Card"
+      />
     </div>
     <div class="-mb-4 pt-24">
       <BrandCarousel />
