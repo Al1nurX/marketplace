@@ -30,7 +30,7 @@ const props = defineProps({
       {{ title }}
     </p>
     <img
-      :src="`/images/${imgSrc}`"
+      :src="`@assets/images/${imgSrc}`"
       :alt="alt"
       class="h-60 w-full transform object-contain object-center duration-300 ease-in-out"
     />

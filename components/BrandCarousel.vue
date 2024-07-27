@@ -8,14 +8,14 @@ import "swiper/css/autoplay";
 import "swiper/css/mousewheel";
 
 const brands = [
-  { name: "brand-1", logo: "/images/brand-1.png" },
-  { name: "brand-2", logo: "/images/brand-2.png" },
-  { name: "brand-3", logo: "/images/brand-3.png" },
-  { name: "brand-4", logo: "/images/brand-4.png" },
-  { name: "brand-5", logo: "/images/brand-5.png" },
-  { name: "brand-6", logo: "/images/brand-6.png" },
-  { name: "brand-7", logo: "/images/brand-7.png" },
-  { name: "brand-8", logo: "/images/brand-8.png" },
+  { name: "brand-1", logo: "@assets/images/brand-1.png" },
+  { name: "brand-2", logo: "@assets/images/brand-2.png" },
+  { name: "brand-3", logo: "@assets/images/brand-3.png" },
+  { name: "brand-4", logo: "@assets/images/brand-4.png" },
+  { name: "brand-5", logo: "@assets/images/brand-5.png" },
+  { name: "brand-6", logo: "@assets/images/brand-6.png" },
+  { name: "brand-7", logo: "@assets/images/brand-7.png" },
+  { name: "brand-8", logo: "@assets/images/brand-8.png" },
 ];
 
 const modules = [Autoplay, Pagination, Navigation, Mousewheel];
@@ -52,14 +52,14 @@ const modules = [Autoplay, Pagination, Navigation, Mousewheel];
       <div className="slider-controler">
         <div className="swiper-button-prev slider-arrow">
           <img
-            src="/images/arrow-left-brand.svg"
+            src="@assets/images/arrow-left-brand.svg"
             alt="arrow-left"
             class="h-[60px] w-[60px]"
           />
         </div>
         <div className="swiper-button-next slider-arrow">
           <img
-            src="/images/arrow-right-brand.svg"
+            src="@assets/images/arrow-right-brand.svg"
             alt="arrow-right"
             class="h-[60px] w-[60px]"
           />

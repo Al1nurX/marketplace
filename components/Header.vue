@@ -10,7 +10,7 @@ const toggleCatalog = () => {
   <header>
     <div class="mt-4 flex justify-end">
       <div class="flex items-center gap-3">
-        <img src="/images/telephone.svg" alt="telephone" class="h-6 w-6" />
+        <img src="@assets/images/telephone.svg" alt="telephone" class="h-6 w-6" />
         <div class="flex items-center gap-x-4">
           <p class="font-montserrat text-base font-semibold text-[#181818]">
             +7(132)50-25-90
@@ -23,7 +23,7 @@ const toggleCatalog = () => {
     </div>
     <div class="my-4 flex items-center justify-between">
       <NuxtLink to="/">
-        <img src="/images/logo.png" alt="Logo" class="h-[47px] w-[240px]" />
+        <img src="@assets/images/logo.png" alt="Logo" class="h-[47px] w-[240px]" />
       </NuxtLink>
       <div class="flex items-end gap-x-[15px]">
         <input

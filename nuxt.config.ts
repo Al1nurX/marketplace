@@ -5,12 +5,15 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts"],
   googleFonts: {
     families: {
-      Inter: [400, 500, 600],
+      Inter: [300, 400, 500, 600, 700],
       Montserrat: [300, 400, 500, 600, 700],
       Roboto: [300, 400, 500, 600, 700],
     },
   },
   colorMode: {
     preference: "light",
+  },
+  alias: {
+    '@assets': '/assets',
   },
 });

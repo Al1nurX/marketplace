@@ -22,11 +22,11 @@ const props = defineProps({
   },
 });
 
-const mainImage = ref("/images/content.png");
+const mainImage = ref("@assets/images/content.png");
 const images = ref([
-  "/images/content-2.jpg",
-  "/images/content-3.jpg",
-  "/images/content-4.jpg",
+  "@assets/images/content-2.jpg",
+  "@assets/images/content-3.jpg",
+  "@assets/images/content-4.jpg",
 ]);
 
 const setMainImage = (image, index) => {
@@ -84,7 +84,7 @@ const decrementCount = () => {
           <button class="absolute right-8 top-8" @click="toggleHeart">
             <img
               :src="
-                isHeartClicked ? '/images/liked-heart.svg' : '/images/heart.svg'
+                isHeartClicked ? '@assets/images/liked-heart.svg' : '@assets/images/heart.svg'
               "
               alt="favorite"
               class="h-[28px] w-[28px] cursor-pointer"
@@ -105,7 +105,7 @@ const decrementCount = () => {
             {{ description }}
           </p>
           <div class="flex items-center gap-x-2">
-            <img src="/images/star.svg" alt="rating" />
+            <img src="@assets/images/star.svg" alt="rating" />
             <p class="font-inter text-xl text-[#000]">{{ rating }}</p>
           </div>
           <div class="flex items-center gap-x-3">
@@ -113,7 +113,7 @@ const decrementCount = () => {
               @click="decrementCount"
               class="flex h-8 w-8 items-center justify-center rounded-l-sm bg-[#E5E5E5] p-1"
             >
-              <img src="/images/minus.svg" alt="minus" />
+              <img src="@assets/images/minus.svg" alt="minus" />
             </button>
             <p class="w-10 text-center font-inter text-xl text-[#000]">
               {{ count }}
@@ -122,7 +122,7 @@ const decrementCount = () => {
               @click="count++"
               class="flex h-8 w-8 items-center justify-center rounded-r-sm bg-[#E5E5E5] p-1"
             >
-              <img src="/images/plus.svg" alt="plus" class="h-6 w-6" />
+              <img src="@assets/images/plus.svg" alt="plus" class="h-6 w-6" />
             </button>
           </div>
 
@@ -140,11 +140,11 @@ const decrementCount = () => {
           <p class="font-inter text-xl text-[#BABABA]">Есть в наличии</p>
           <div class="mt-3 flex gap-x-16">
             <div class="flex items-center gap-x-3">
-              <img src="/images/exist.svg" alt="exist" class="h-6 w-6" />
+              <img src="@assets/images/exist.svg" alt="exist" class="h-6 w-6" />
               <p class="font-inter text-xl text-[#000]">Оптом</p>
             </div>
             <div class="flex items-center gap-x-3">
-              <img src="/images/exist.svg" alt="exist" class="h-6 w-6" />
+              <img src="@assets/images/exist.svg" alt="exist" class="h-6 w-6" />
               <p class="font-inter text-xl text-[#000]">В розницу</p>
             </div>
           </div>
@@ -170,7 +170,7 @@ const decrementCount = () => {
             'bg-white text-black': activeTab === 'reviews',
             'text-gray-500': activeTab !== 'reviews',
           }"
-          class="w-1/2 rounded-lg py-2 font-inter text-lg font-medium text-[#000] transition-colors duration-300"
+          class="w-1/2 rounded-lg py-3 font-inter text-lg font-medium text-[#000] transition-colors duration-300"
         >
           Отзывы
         </button>
@@ -226,7 +226,7 @@ const decrementCount = () => {
                   Айжулдыз А.
                 </p>
                 <div class="flex items-center">
-                  <img src="/images/star.svg" alt="rating" />
+                  <img src="@assets/images/star.svg" alt="rating" />
                   <p class="font-montserrat text-base text-[#1B1A1A]">
                     {{ rating }}
                   </p>
@@ -249,7 +249,7 @@ const decrementCount = () => {
                   Айжулдыз А.
                 </p>
                 <div class="flex items-center">
-                  <img src="/images/star.svg" alt="rating" />
+                  <img src="@assets/images/star.svg" alt="rating" />
                   <p class="font-montserrat text-base text-[#1B1A1A]">
                     {{ rating }}
                   </p>

@@ -40,7 +40,7 @@ const toggleHeart = () => {
         >
           <img
             :src="
-              isHeartClicked ? '/images/liked-heart.svg' : '/images/heart.svg'
+              isHeartClicked ? '@assets/images/liked-heart.svg' : '@assets/images/heart.svg'
             "
             alt="favorite"
             class="h-[28px] w-[28px] cursor-pointer"

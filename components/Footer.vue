@@ -75,7 +75,7 @@
           class="absolute inset-y-0 right-0 flex h-12 w-14 items-center justify-center rounded-r-[6px] bg-[#5810B5]"
         >
           <img
-            src="/images/input-arrow.svg"
+            src="@assets/images/input-arrow.svg"
             alt="input-arrow"
             class="h-6 w-6"
           />
@@ -84,7 +84,7 @@
       <div class="flex gap-x-[16px]">
         <a href="">
           <img
-            src="/images/instagram.svg"
+            src="@assets/images/instagram.svg"
             alt="instagram"
             width="48"
             height="48"
@@ -93,7 +93,7 @@
         </a>
         <a href="">
           <img
-            src="/images/whatsapp.svg"
+            src="@assets/images/whatsapp.svg"
             alt="whatsapp"
             width="48"
             height="48"

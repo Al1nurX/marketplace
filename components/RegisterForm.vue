@@ -205,7 +205,7 @@ const prevStep = () => {
         >
           1/3
         </div>
-        <img src="/images/arrow-right.svg" alt="arrow-right" class="w-8" />
+        <img src="@assets/images/arrow-right.svg" alt="arrow-right" class="w-8" />
         <div
           :class="{
             'bg-[#5810B5] text-white': activeStep >= 2,
@@ -215,7 +215,7 @@ const prevStep = () => {
         >
           2/3
         </div>
-        <img src="/images/arrow-right.svg" alt="arrow-right" class="w-8" />
+        <img src="@assets/images/arrow-right.svg" alt="arrow-right" class="w-8" />
         <div
           :class="{
             'bg-[#5810B5] text-white': activeStep >= 3,
