@@ -55,17 +55,17 @@ defineExpose({
 });
 
 const decrementCount = () => {
-	if (count.value > 0) {
-		count.value --;
-	}
-}
+  if (count.value > 0) {
+    count.value--;
+  }
+};
 </script>
 
 <template>
   <main>
-    <div class="flex gap-x-5 xl:h-[540px]">
+    <div class="flex gap-x-10 xl:h-[540px]">
       <div
-        class="relative flex h-full overflow-hidden rounded-md border border-gray-200 xl:w-[650px]"
+        class="group relative flex h-full overflow-hidden rounded-md border border-gray-200 xl:w-[610px]"
       >
         <div
           :style="{ backgroundImage: `url(${mainImage})` }"
@@ -78,7 +78,7 @@ const decrementCount = () => {
               :src="image"
               @click="setMainImage(image, index)"
               alt="ФОТО ТОВАРА"
-              class="h-[100px] w-[100px] cursor-pointer rounded-md border border-gray-300 object-cover transition duration-300 hover:scale-105"
+              class="h-[100px] w-[100px] cursor-pointer rounded-md border border-gray-300 object-cover opacity-50 transition duration-300 ease-in-out hover:scale-105 group-hover:opacity-100"
             />
           </div>
           <button class="absolute right-8 top-8" @click="toggleHeart">
@@ -240,21 +240,20 @@ const decrementCount = () => {
                 отличная ручка Классная ручка, не изменяю ей. Только ею пишу.
               </p>
             </div>
-            <!-- <p>Отзывы будут здесь.</p> -->
           </div>
           <div class="font-inter text-base text-[#000]">
             <div class="flex flex-row gap-x-10">
               <div class="flex max-w-[20%] flex-col gap-y-2">
-                <p class="font-montserrat text-lg text-[#1B1A1A]">
+                <p class="font-montserrat text-lg text-[#1B1A1А]">
                   Айжулдыз А.
                 </p>
                 <div class="flex items-center">
                   <img src="/images/star.svg" alt="rating" />
-                  <p class="font-montserrat text-base text-[#1B1A1A]">
+                  <p class="font-montserrat text-base text-[#1B1А1А]">
                     {{ rating }}
                   </p>
                 </div>
-                <p class="font-montserrat text-base text-[#1B1A1A]">
+                <p class="font-montserrat text-base text-[#1B1А1А]">
                   25.07.2023
                 </p>
               </div>
@@ -263,7 +262,6 @@ const decrementCount = () => {
                 отличная ручка Классная ручка, не изменяю ей. Только ею пишу.
               </p>
             </div>
-            <!-- <p>Отзывы будут здесь.</p> -->
           </div>
         </div>
       </div>

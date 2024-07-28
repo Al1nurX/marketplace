@@ -1,8 +1,7 @@
 <script setup>
-import { ref, nextTick } from "vue";
-
 const isCatalogOpen = ref(false);
 const catalogTransitioning = ref(false);
+let closeTimeout = null;
 
 const toggleCatalog = () => {
   isCatalogOpen.value = !isCatalogOpen.value;
@@ -10,11 +9,19 @@ const toggleCatalog = () => {
 };
 
 const openCatalog = () => {
+  clearTimeout(closeTimeout);
   isCatalogOpen.value = true;
   handleCatalogTransition();
 };
 
 const closeCatalog = () => {
+  closeTimeout = setTimeout(() => {
+    isCatalogOpen.value = false;
+    handleCatalogTransition();
+  }, 100);
+};
+
+const handleItemClick = () => {
   isCatalogOpen.value = false;
   handleCatalogTransition();
 };
@@ -37,7 +44,7 @@ function beforeEnter(el) {
 }
 
 function enter(el, done) {
-  el.style.transition = "height 0.8s ease, opacity 0.8s ease";
+  el.style.transition = "height 0.6s ease, opacity 0.6s ease";
   el.style.height = el.scrollHeight + "px";
   el.style.opacity = "1";
   setTimeout(() => {
@@ -47,7 +54,7 @@ function enter(el, done) {
 }
 
 function leave(el, done) {
-  el.style.transition = "height 0.8s ease, opacity 0.8s ease";
+  el.style.transition = "height 0.6s ease, opacity 0.6s ease";
   el.style.height = "0px";
   el.style.opacity = "1";
   setTimeout(() => {
@@ -55,6 +62,31 @@ function leave(el, done) {
     catalogTransitioning.value = false;
   }, 800);
 }
+
+const catalogItems = [
+  {
+    id: "1",
+    routeName: "pismennye-prinadlezhnosti",
+    title: "Письменные принадлежности",
+  },
+  { id: "2", routeName: "bumazhnaia-produkcia", title: "Бумажная продукция" },
+  { id: "3", routeName: "shkolnyy-tekstil", title: "Школьный текстиль" },
+  { id: "4", routeName: "podarki-suveniry", title: "Подарки, сувениры" },
+  { id: "5", routeName: "khobbi-i-tvorchestvo", title: "Хобби и творчество" },
+  { id: "6", routeName: "ofisnaya-mebel", title: "Офисная мебель" },
+  {
+    id: "7",
+    routeName: "demonstracionnye-oborudovanie",
+    title: "Демонстрационные оборудование",
+  },
+  { id: "8", routeName: "bytovaya-himija", title: "Бытовая химия" },
+  { id: "9", routeName: "kоzhgalantereya", title: "Кожгалантерея" },
+  {
+    id: "10",
+    routeName: "gosudarstvennaya-simbolika",
+    title: "Государственная символика",
+  },
+];
 </script>
 
 <template>
@@ -154,14 +186,20 @@ function leave(el, done) {
       <div
         v-if="isCatalogOpen"
         id="catalog"
-        class="absolute left-0 right-0 z-[99] mx-[60px] overflow-hidden bg-[#fefefe] px-4"
+        class="absolute left-0 right-0 z-[99] mx-[60px] overflow-hidden bg-[#FFF] px-4"
+        @mouseenter="openCatalog"
+        @mouseleave="closeCatalog"
       >
-        <p>sdfsfdz</p>
-        <p>sdfsfdz</p>
-        <p>sdfsfdz</p>
-        <p>sdfsfdz</p>
-        <p>sdfsfdz</p>
-        <p>sdfsfdz</p>
+        <div class="my-5 grid grid-cols-3 gap-6">
+          <MenuCatalog
+            v-for="item in catalogItems"
+            :key="item.id"
+            :to="`/catalog/${item.routeName}`"
+            :title="item.title"
+            imgSrc="/images/content.png"
+            @click="handleItemClick"
+          />
+        </div>
       </div>
     </transition>
   </header>
@@ -178,3 +216,6 @@ function leave(el, done) {
   opacity: 1;
 }
 </style>
+
+
+// make it responsive for laptops, tablets and smartphones using only tailwind css, don't change current style for laptops just make it adaptive:
