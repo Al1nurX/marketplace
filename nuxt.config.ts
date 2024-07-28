@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "light",
   },
-  alias: {
-    '@assets': '/assets',
-  },
+  // alias: {
+  //   '@assets': '/assets',
+  // },
 });

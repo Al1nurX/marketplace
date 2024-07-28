@@ -19,7 +19,7 @@ const props = defineProps({
           :key="item.id"
           :to="`/catalog/${item.catRouteName}/${item.routeName}/product?id=${item.id}`"
           :title="item.title"
-          imgSrc="@assets/images/card-1.jpg"
+          imgSrc="/images/card-1.jpg"
           alt="Card"
           class="inline-block"
         />

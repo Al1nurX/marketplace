@@ -101,7 +101,7 @@ const categoryTitle = computed(
         :key="category.id"
         :to="`/catalog/${category.catRouteName}/${category.routeName}`"
         :title="category.title"
-        imgSrc="@assets/images/card-1.jpg"
+        imgSrc="/images/card-1.jpg"
         alt="Card"
       />
     </section>

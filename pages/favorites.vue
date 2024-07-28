@@ -29,7 +29,7 @@ const decrementCount = () => {
           class="flex h-[100px] items-center rounded-[20px] border border-solid border-gray-300 px-[20px] py-[25px]"
         >
           <img
-            src="@assets/images/sample.svg"
+            src="/images/sample.svg"
             alt="sample"
             class="h-[50px] w-[50px]"
           />
@@ -43,7 +43,7 @@ const decrementCount = () => {
               @click="decrementCount"
               class="flex h-8 w-8 items-center justify-center bg-[#E5E5E5]"
             >
-              <img src="@assets/images/minus.svg" alt="minus" />
+              <img src="/images/minus.svg" alt="minus" />
             </button>
             <p class="w-8 text-center font-inter text-xl text-[#000]">
               {{ count }}
@@ -52,12 +52,12 @@ const decrementCount = () => {
               @click="count++"
               class="flex h-8 w-8 items-center justify-center bg-[#E5E5E5]"
             >
-              <img src="@assets/images/plus.svg" alt="plus" class="h-6 w-6" />
+              <img src="/images/plus.svg" alt="plus" class="h-6 w-6" />
             </button>
           </div>
           <p class="font-inter text-xl text-[#000]">{{ 250 * count }} тг</p>
           <button class="flex h-8 w-8 items-center justify-center">
-            <img src="@assets/images/delete.svg" alt="delete" class="h-6 w-6" />
+            <img src="/images/delete.svg" alt="delete" class="h-6 w-6" />
           </button>
         </div>
       </div>

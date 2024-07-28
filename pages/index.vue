@@ -23,17 +23,17 @@ const categories = [
   <main class="mt-[25px]">
     <div class="flex items-center justify-between gap-x-5">
       <img
-        src="@assets/images/banner-1.jpg"
+        src="/images/banner-1.jpg"
         alt="Banner"
         class="h-[526px] w-[428px] rounded-3xl object-cover object-center"
       />
       <img
-        src="@assets/images/banner-2.jpg"
+        src="/images/banner-2.jpg"
         alt="Banner"
         class="h-[526px] w-[428px] rounded-3xl object-cover object-center"
       />
       <img
-        src="@assets/images/banner-3.jpg"
+        src="/images/banner-3.jpg"
         alt="Banner"
         class="h-[526px] w-[428px] rounded-3xl object-cover object-center"
       />
@@ -65,7 +65,7 @@ const categories = [
         :key="category.id"
         :to="`/catalog/${category.catRouteName}/${category.routeName}`"
         :title="category.title"
-        imgSrc="@assets/images/card-1.jpg"
+        imgSrc="/images/card-1.jpg"
         alt="Card"
       />
     </div>
@@ -83,7 +83,7 @@ const categories = [
         :key="category.id"
         :to="`/catalog/${category.catRouteName}/${category.routeName}`"
         :title="category.title"
-        imgSrc="@assets/images/card-1.jpg"
+        imgSrc="/images/card-1.jpg"
         alt="Card"
       />
     </div>

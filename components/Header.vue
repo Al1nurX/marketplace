@@ -1,16 +1,67 @@
 <script setup>
+import { ref, nextTick } from "vue";
+
 const isCatalogOpen = ref(false);
+const catalogTransitioning = ref(false);
 
 const toggleCatalog = () => {
   isCatalogOpen.value = !isCatalogOpen.value;
+  handleCatalogTransition();
 };
+
+const openCatalog = () => {
+  isCatalogOpen.value = true;
+  handleCatalogTransition();
+};
+
+const closeCatalog = () => {
+  isCatalogOpen.value = false;
+  handleCatalogTransition();
+};
+
+const handleCatalogTransition = () => {
+  catalogTransitioning.value = true;
+  nextTick(() => {
+    const catalog = document.getElementById("catalog");
+    if (isCatalogOpen.value) {
+      catalog.style.height = catalog.scrollHeight + "px";
+    } else {
+      catalog.style.height = "0px";
+    }
+  });
+};
+
+function beforeEnter(el) {
+  el.style.height = "0px";
+  el.style.opacity = "1";
+}
+
+function enter(el, done) {
+  el.style.transition = "height 0.8s ease, opacity 0.8s ease";
+  el.style.height = el.scrollHeight + "px";
+  el.style.opacity = "1";
+  setTimeout(() => {
+    done();
+    catalogTransitioning.value = false;
+  }, 800);
+}
+
+function leave(el, done) {
+  el.style.transition = "height 0.8s ease, opacity 0.8s ease";
+  el.style.height = "0px";
+  el.style.opacity = "1";
+  setTimeout(() => {
+    done();
+    catalogTransitioning.value = false;
+  }, 800);
+}
 </script>
 
 <template>
   <header>
     <div class="mt-4 flex justify-end">
       <div class="flex items-center gap-3">
-        <img src="@assets/images/telephone.svg" alt="telephone" class="h-6 w-6" />
+        <img src="/images/telephone.svg" alt="telephone" class="h-6 w-6" />
         <div class="flex items-center gap-x-4">
           <p class="font-montserrat text-base font-semibold text-[#181818]">
             +7(132)50-25-90
@@ -23,7 +74,7 @@ const toggleCatalog = () => {
     </div>
     <div class="my-4 flex items-center justify-between">
       <NuxtLink to="/">
-        <img src="@assets/images/logo.png" alt="Logo" class="h-[47px] w-[240px]" />
+        <img src="/images/logo.png" alt="Logo" class="h-[47px] w-[240px]" />
       </NuxtLink>
       <div class="flex items-end gap-x-[15px]">
         <input
@@ -62,9 +113,11 @@ const toggleCatalog = () => {
         </NuxtLink>
       </div>
     </div>
-    <div class="grid w-full grid-cols-3 items-center">
+    <div class="relative grid w-full grid-cols-3 items-center">
       <button
         @click="toggleCatalog"
+        @mouseenter="openCatalog"
+        @mouseleave="closeCatalog"
         class="flex justify-center border-r border-solid border-[#FFF] bg-[#5810B5] transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
@@ -92,6 +145,36 @@ const toggleCatalog = () => {
         </p>
       </div>
     </div>
-    <div v-if="isCatalogOpen" class="">lorem*15</div>
+    <transition
+      name="expand"
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
+    >
+      <div
+        v-if="isCatalogOpen"
+        id="catalog"
+        class="absolute left-0 right-0 z-[99] mx-[60px] overflow-hidden bg-[#fefefe] px-4"
+      >
+        <p>sdfsfdz</p>
+        <p>sdfsfdz</p>
+        <p>sdfsfdz</p>
+        <p>sdfsfdz</p>
+        <p>sdfsfdz</p>
+        <p>sdfsfdz</p>
+      </div>
+    </transition>
   </header>
 </template>
+
+<style scoped>
+.expand-enter-active,
+.expand-leave-active {
+  overflow: hidden;
+}
+.expand-enter-to,
+.expand-leave-from {
+  height: auto;
+  opacity: 1;
+}
+</style>

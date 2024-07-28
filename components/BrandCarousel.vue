@@ -8,14 +8,14 @@ import "swiper/css/autoplay";
 import "swiper/css/mousewheel";
 
 const brands = [
-  { name: "brand-1", logo: "@assets/images/brand-1.png" },
-  { name: "brand-2", logo: "@assets/images/brand-2.png" },
-  { name: "brand-3", logo: "@assets/images/brand-3.png" },
-  { name: "brand-4", logo: "@assets/images/brand-4.png" },
-  { name: "brand-5", logo: "@assets/images/brand-5.png" },
-  { name: "brand-6", logo: "@assets/images/brand-6.png" },
-  { name: "brand-7", logo: "@assets/images/brand-7.png" },
-  { name: "brand-8", logo: "@assets/images/brand-8.png" },
+  { name: "brand-1", logo: "brand-1.png" },
+  { name: "brand-2", logo: "brand-2.png" },
+  { name: "brand-3", logo: "brand-3.png" },
+  { name: "brand-4", logo: "brand-4.png" },
+  { name: "brand-5", logo: "brand-5.png" },
+  { name: "brand-6", logo: "brand-6.png" },
+  { name: "brand-7", logo: "brand-7.png" },
+  { name: "brand-8", logo: "brand-8.png" },
 ];
 
 const modules = [Autoplay, Pagination, Navigation, Mousewheel];
@@ -44,7 +44,7 @@ const modules = [Autoplay, Pagination, Navigation, Mousewheel];
     >
       <swiper-slide v-for="(brand, index) in brands" :key="index" class="px-20">
         <img
-          :src="brand.logo"
+          :src="`/images/${brand.logo}`"
           :alt="brand.name"
           class="h-[80px] w-[240px] object-contain grayscale transition duration-300 ease-in-out hover:grayscale-0"
         />
@@ -52,14 +52,14 @@ const modules = [Autoplay, Pagination, Navigation, Mousewheel];
       <div className="slider-controler">
         <div className="swiper-button-prev slider-arrow">
           <img
-            src="@assets/images/arrow-left-brand.svg"
+            src="/images/arrow-left-brand.svg"
             alt="arrow-left"
             class="h-[60px] w-[60px]"
           />
         </div>
         <div className="swiper-button-next slider-arrow">
           <img
-            src="@assets/images/arrow-right-brand.svg"
+            src="/images/arrow-right-brand.svg"
             alt="arrow-right"
             class="h-[60px] w-[60px]"
           />

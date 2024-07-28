@@ -171,7 +171,7 @@ const value = ref();
           <div class="flex cursor-pointer items-center justify-between">
             <p class="font-roboto font-medium text-[#000] xl:text-xl">Бренд</p>
             <img
-              src="@assets/images/arrow-down.svg"
+              src="/images/arrow-down.svg"
               alt="arrow-down"
               class="h-6 w-6"
             />
@@ -179,7 +179,7 @@ const value = ref();
 					<div class="flex cursor-pointer items-center justify-between">
             <p class="font-roboto font-medium text-[#000] xl:text-xl">Бренд</p>
             <img
-              src="@assets/images/arrow-down.svg"
+              src="/images/arrow-down.svg"
               alt="arrow-down"
               class="h-6 w-6"
             />
@@ -187,7 +187,7 @@ const value = ref();
 					<div class="flex cursor-pointer items-center justify-between">
             <p class="font-roboto font-medium text-[#000] xl:text-xl">Бренд</p>
             <img
-              src="@assets/images/arrow-down.svg"
+              src="/images/arrow-down.svg"
               alt="arrow-down"
               class="h-6 w-6"
             />
@@ -199,7 +199,7 @@ const value = ref();
         :key="product.id"
         :to="`/catalog/${product.catRouteName}/${product.routeName}/product?id=${product.id}`"
         :title="product.title"
-        imgSrc="@assets/images/card-1.jpg"
+        imgSrc="/images/card-1.jpg"
         alt="Card"
       />
     </section>
