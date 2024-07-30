@@ -187,10 +187,20 @@ const prevStep = () => {
 
         <UButton
           type="submit"
-          class="!mb-12 !mt-12 flex w-full items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white hover:bg-[#a05d8a]"
+          class="!mt-8 flex w-full items-center justify-center bg-[#AE498C] py-2.5 font-montserrat text-[17px] font-medium text-white transition duration-200 ease-in-out hover:bg-[#973f79]"
         >
           Зарегистрироваться
         </UButton>
+
+        <UDivider label="ИЛИ" />
+
+        <UButton
+          color="emerald"
+          label="Регистрация через Google"
+          icon="i-simple-icons-google"
+          block
+          class="!mb-8 space-x-1 py-2.5 font-montserrat text-[17px] font-medium transition duration-200 ease-in-out"
+        />
       </UForm>
     </div>
 
@@ -253,7 +263,7 @@ const prevStep = () => {
           <UButton
             type="button"
             @click="nextStep"
-            class="!mb-12 !mt-10 flex w-full items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white hover:bg-[#a05d8a]"
+            class="!mb-12 !mt-10 flex w-full items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white transition duration-200 ease-in-out hover:bg-[#973f79]"
           >
             Далее
           </UButton>
@@ -279,14 +289,14 @@ const prevStep = () => {
             <UButton
               type="button"
               @click="prevStep"
-              class="flex flex-1 items-center justify-center bg-gray-500 py-2 font-montserrat text-lg font-medium text-white hover:bg-gray-600"
+              class="flex flex-1 items-center justify-center bg-gray-500 py-2 font-montserrat text-lg font-medium text-white transition duration-200 ease-in-out hover:bg-gray-600"
             >
               Назад
             </UButton>
             <UButton
               type="button"
               @click="nextStep"
-              class="flex flex-1 items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white hover:bg-[#a05d8a]"
+              class="flex flex-1 items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white transition duration-200 ease-in-out hover:bg-[#973f79]"
             >
               Далее
             </UButton>
@@ -332,13 +342,13 @@ const prevStep = () => {
             <UButton
               type="button"
               @click="prevStep"
-              class="flex flex-1 items-center justify-center bg-gray-500 py-2 font-montserrat text-lg font-medium text-white hover:bg-gray-600"
+              class="flex flex-1 items-center justify-center bg-gray-500 py-2 font-montserrat text-lg font-medium text-white transition duration-200 ease-in-out hover:bg-gray-600"
             >
               Назад
             </UButton>
             <UButton
               type="submit"
-              class="flex flex-1 items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white hover:bg-[#a05d8a]"
+              class="flex flex-1 items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-white transition duration-200 ease-in-out hover:bg-[#973f79]"
             >
               Зарегистрироваться
             </UButton>

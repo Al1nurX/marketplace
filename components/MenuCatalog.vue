@@ -16,7 +16,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink :to="to" class="hover:img-scale flex items-center gap-x-3">
+  <NuxtLink
+    :to="to"
+    class="hover:img-scale flex items-center gap-x-3 overflow-hidden rounded-xl transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+  >
     <div class="h-20 w-20 overflow-hidden">
       <img
         :src="imgSrc"
@@ -24,7 +27,11 @@ const props = defineProps({
         class="h-full w-full transform object-contain object-center duration-300 ease-in-out"
       />
     </div>
-    <p class="font-montserrat text-lg font-medium">{{ title }}</p>
+    <p
+      class="font-montserrat text-lg font-medium transition duration-200 ease-in-out hover:opacity-70"
+    >
+      {{ title }}
+    </p>
   </NuxtLink>
 </template>
 

@@ -63,7 +63,7 @@ async function onSubmit(event) {
 
     <UButton
       type="submit"
-      class="!mb-12 !mt-10 flex w-full items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-[#FFF] hover:bg-[#a05d8a]"
+      class="!mb-12 !mt-10 flex w-full items-center justify-center bg-[#AE498C] py-2 font-montserrat text-lg font-medium text-[#FFF] transition duration-200 ease-in-out hover:bg-[#973f79]"
     >
       Войти
     </UButton>

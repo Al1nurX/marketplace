@@ -2,6 +2,10 @@
 const props = defineProps({
   to: {
     type: String,
+    required: true,
+  },
+  type: {
+    type: String,
     required: false,
   },
   title: {
@@ -14,7 +18,7 @@ const props = defineProps({
   },
   alt: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
@@ -26,14 +30,21 @@ const toggleHeart = () => {
 </script>
 
 <template>
-  <div>
+  <div class="box-border flex h-full flex-col">
     <NuxtLink :to="to" class="text-center">
-      <div class="relative mb-5 overflow-hidden">
+      <div class="relative mb-5 w-full overflow-hidden xl:h-[400px]">
         <img
           :src="imgSrc"
           :alt="alt"
-          class="object-cover object-center transition duration-300 ease-in-out hover:scale-105 xl:h-[400px] xl:w-[415px]"
+          class="h-full w-full object-cover object-center transition duration-300 ease-in-out hover:scale-105"
         />
+        <div v-if="type" class="absolute left-[20px] top-[20px]">
+          <p
+            class="rounded-full border border-[#51E028] bg-gray-100 px-3 font-montserrat"
+          >
+            {{ type }}
+          </p>
+        </div>
         <button
           class="absolute right-[20px] top-[20px]"
           @click.prevent="toggleHeart"
@@ -51,7 +62,7 @@ const toggleHeart = () => {
           />
         </button>
       </div>
-      <p class="mb-9 font-montserrat text-2xl font-semibold text-[#181818]">
+      <p class="mb-9 font-montserrat text-xl font-semibold text-[#181818]">
         {{ title }}
       </p>
     </NuxtLink>

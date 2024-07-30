@@ -105,9 +105,9 @@ const catalogItems = [
       </div>
     </div>
     <div class="my-4 flex items-center justify-between">
-      <NuxtLink to="/">
+      <a href="/">
         <img src="/images/logo.png" alt="Logo" class="h-[47px] w-[240px]" />
-      </NuxtLink>
+      </a>
       <div class="flex items-end gap-x-[15px]">
         <input
           type="text"
@@ -190,7 +190,7 @@ const catalogItems = [
         @mouseenter="openCatalog"
         @mouseleave="closeCatalog"
       >
-        <div class="my-5 grid grid-cols-3 gap-6">
+        <div class="my-6 grid grid-cols-3 gap-6">
           <MenuCatalog
             v-for="item in catalogItems"
             :key="item.id"
@@ -217,5 +217,5 @@ const catalogItems = [
 }
 </style>
 
-
-// make it responsive for laptops, tablets and smartphones using only tailwind css, don't change current style for laptops just make it adaptive:
+// make it responsive for laptops, tablets and smartphones using only tailwind
+css, don't change current style for laptops just make it adaptive:
