@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '350px',
+      },
       textColor: {
         'searchColor': 'rgba(60, 42, 153, 0.40)',
         'hoverOnCard': 'rgba(0, 0, 0, 0.50)',

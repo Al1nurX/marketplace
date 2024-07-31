@@ -69,7 +69,7 @@ const decrementCount = () => {
       >
         <div
           :style="{ backgroundImage: `url(${mainImage})` }"
-          class="relative h-full w-full bg-cover bg-center bg-no-repeat"
+          class="relative h-full w-full bg-cover bg-center bg-no-repeat transition duration-300 ease-in-out"
         >
           <div class="flex h-full flex-col justify-center space-y-5 pl-8">
             <img
