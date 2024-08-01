@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-07-10",
   devtools: { enabled: true },
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts", 'nuxt-swiper'],
-  plugins: [{ src: "~/plugins/vueperslides.js", mode: "client" }],
   googleFonts: {
     families: {
       Inter: [300, 400, 500, 600, 700, 900],
