@@ -20,7 +20,9 @@ const props = defineProps({
     :to="to"
     class="hover:img-scale hover:text-opacity flex items-center gap-x-3 overflow-hidden rounded-xl transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
   >
-    <div class="overflow-hidden md:h-[70px] md:w-[70px] xl:h-20 xl:w-20">
+    <div
+      class="overflow-hidden xs:w-[50px] sm:w-[60px] md:h-[70px] md:w-[70px] xl:h-20 xl:w-20"
+    >
       <img
         :src="imgSrc"
         alt="menu-catalog"
@@ -28,7 +30,7 @@ const props = defineProps({
       />
     </div>
     <p
-      class="font-montserrat font-medium transition duration-200 ease-in-out md:max-w-40 lg:text-lg xl:max-w-60"
+      class="font-montserrat font-medium transition duration-200 ease-in-out xs:max-w-36 xs:text-sm sm:max-w-40 sm:text-base lg:text-lg xl:max-w-60"
     >
       {{ title }}
     </p>

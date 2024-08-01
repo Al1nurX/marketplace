@@ -97,7 +97,7 @@ const catalogItems = [
 
 <template>
   <header>
-    <div class="xs:hidden mt-4 justify-end lg:flex">
+    <div class="mt-4 justify-end xs:hidden lg:flex">
       <div class="flex items-center gap-3">
         <img src="/images/telephone.svg" alt="telephone" class="h-6 w-6" />
         <div class="flex items-center gap-x-4">
@@ -115,11 +115,11 @@ const catalogItems = [
         <img
           src="/images/logo.png"
           alt="Logo"
-          class="md:w-[200px] lg:w-[210px] xl:w-[240px]"
+          class="xs:w-[170px] sm:w-[200px] lg:w-[210px] xl:w-[240px]"
         />
       </a>
       <div
-        class="xs:hidden items-end md:flex md:gap-x-2 lg:gap-x-[10px] xl:gap-x-[15px]"
+        class="items-end xs:hidden md:flex md:gap-x-2 lg:gap-x-[10px] xl:gap-x-[15px]"
       >
         <input
           type="text"
@@ -158,36 +158,45 @@ const catalogItems = [
           </div>
         </NuxtLink>
       </div>
-      <div class="flex items-center lg:hidden">
-        <button @click="toggleMenu" class="flex items-center justify-center">
-          <Icon name="material-symbols-light:menu" size="32" />
-        </button>
+      <div class="flex items-center gap-x-6 lg:hidden">
+        <div class="flex items-center md:hidden">
+          <button class="flex items-center justify-center">
+            <Icon name="material-symbols-light:search" size="32" />
+          </button>
+        </div>
+        <div class="flex items-center lg:hidden">
+          <button @click="toggleMenu" class="flex items-center justify-center">
+            <Icon name="material-symbols-light:menu" size="32" />
+          </button>
+        </div>
       </div>
-      <div
-        v-if="isMenuOpen"
-        class="flex flex-col items-center px-4 sm:px-8 lg:hidden lg:px-0"
-      >
-        <NuxtLink to="/favorites" @click="toggleMenu" class="w-full">
-          <div class="flex w-full items-center justify-center py-2">
-            <Icon name="material-symbols-light:favorite-outline" size="32" />
-          </div>
-        </NuxtLink>
-        <NuxtLink to="/cart" @click="toggleMenu" class="relative w-full">
-          <div class="flex w-full items-center justify-center py-2">
-            <Icon name="bitcoin-icons:cart-outline" size="32" />
-          </div>
-          <div
-            class="absolute -top-[12px] left-[50%] flex h-4 w-4 -translate-x-1/2 transform items-center justify-center rounded-full bg-[#5810B5]"
-          >
-            <p class="text-xs text-[#FFFFFF]">2</p>
-          </div>
-        </NuxtLink>
-        <NuxtLink to="/profile" @click="toggleMenu" class="w-full">
-          <div class="flex w-full items-center justify-center py-2">
-            <Icon name="lets-icons:user-alt-light" size="32" />
-          </div>
-        </NuxtLink>
-      </div>
+      <transition name="slide-left">
+        <div
+          v-if="isMenuOpen"
+          class="fixed inset-y-0 left-0 z-50 flex w-3/4 flex-col items-center bg-white px-4 shadow-md sm:px-8 lg:hidden lg:px-0"
+        >
+          <NuxtLink to="/favorites" @click="toggleMenu" class="w-full">
+            <div class="flex w-full items-center justify-center py-2">
+              <Icon name="material-symbols-light:favorite-outline" size="32" />
+            </div>
+          </NuxtLink>
+          <NuxtLink to="/cart" @click="toggleMenu" class="relative w-full">
+            <div class="flex w-full items-center justify-center py-2">
+              <Icon name="bitcoin-icons:cart-outline" size="32" />
+            </div>
+            <div
+              class="absolute -top-[12px] left-[50%] flex h-4 w-4 -translate-x-1/2 transform items-center justify-center rounded-full bg-[#5810B5]"
+            >
+              <p class="text-xs text-[#FFFFFF]">2</p>
+            </div>
+          </NuxtLink>
+          <NuxtLink to="/profile" @click="toggleMenu" class="w-full">
+            <div class="flex w-full items-center justify-center py-2">
+              <Icon name="lets-icons:user-alt-light" size="32" />
+            </div>
+          </NuxtLink>
+        </div>
+      </transition>
     </div>
     <div class="relative grid w-full grid-cols-3 items-center">
       <button
@@ -197,7 +206,7 @@ const catalogItems = [
         class="flex justify-center border-r border-solid border-[#FFF] bg-[#5810B5] transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
-          class="font-alegreya-sans-sc font-extrabold text-[#FFF] md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
+          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-1 sm:py-2 md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
         >
           Каталог
         </p>
@@ -206,7 +215,7 @@ const catalogItems = [
         class="border-r border-solid border-[#FFF] bg-[#5810B5] text-center transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
-          class="font-alegreya-sans-sc font-extrabold text-[#FFF] md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
+          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-1 sm:py-2 md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
         >
           Адрес
         </p>
@@ -215,7 +224,7 @@ const catalogItems = [
         class="bg-[#5810B5] text-center transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
-          class="font-alegreya-sans-sc font-extrabold text-[#FFF] md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
+          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-1 sm:py-2 md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
         >
           Коллекции
         </p>
@@ -230,12 +239,12 @@ const catalogItems = [
       <div
         v-if="isCatalogOpen"
         id="catalog"
-        class="xs:mx-[20px] absolute left-0 right-0 z-[99] overflow-hidden bg-[#FFF] px-4 sm:mx-[30px] md:mx-[40px] xl:mx-[60px]"
+        class="absolute left-0 right-0 z-[99] overflow-hidden bg-[#FFF] px-4 xs:mx-[20px] sm:mx-[30px] md:mx-[40px] xl:mx-[60px]"
         @mouseenter="openCatalog"
         @mouseleave="closeCatalog"
       >
         <div
-          class="my-6 grid sm:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-5 xl:gap-6"
+          class="grid grid-cols-1 xs:my-4 xs:gap-3 sm:my-6 sm:grid-cols-2 sm:gap-4 md:gap-4 lg:grid-cols-3 lg:gap-5 xl:gap-6"
         >
           <MenuCatalog
             v-for="item in catalogItems"
@@ -256,13 +265,29 @@ const catalogItems = [
 .expand-leave-active {
   overflow: hidden;
 }
+
 .expand-enter-to,
 .expand-leave-from {
   height: auto;
   opacity: 1;
 }
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+  transform: translateX(-100%);
+  /* opacity: 0; */
+}
+
+.slide-left-enter-to,
+.slide-left-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
 </style>
-
-// make it responsive for laptops, tablets and smartphones using only tailwind
-css, don't change current style for laptops just make it adaptive:
-
