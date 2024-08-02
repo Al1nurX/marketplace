@@ -22,9 +22,7 @@ const brands = [
 </script>
 
 <template>
-  <div
-    class="relative flex items-center justify-between  overflow-hidden"
-  >
+  <div class="relative flex items-center justify-between">
     <div class="slider-controler">
       <div class="swiper-button-prev slider-arrow">
         <img
@@ -93,12 +91,12 @@ const brands = [
 }
 
 .swiper-button-next {
-  right: 35px;
+  right: -10px;
 }
 
 .swiper-button-prev {
   left: -10px;
-} 
+}
 
 .swiper-button-next::after,
 .swiper-button-prev::after {

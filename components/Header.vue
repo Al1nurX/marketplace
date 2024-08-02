@@ -173,26 +173,34 @@ const catalogItems = [
       <transition name="slide-left">
         <div
           v-if="isMenuOpen"
-          class="fixed inset-y-0 left-0 z-50 flex w-3/4 flex-col items-center bg-white px-4 shadow-md sm:px-8 lg:hidden lg:px-0"
+          class="fixed left-0 top-0 z-50 flex min-h-dvh w-screen flex-col justify-center gap-y-10 bg-white text-center shadow-md"
         >
-          <NuxtLink to="/favorites" @click="toggleMenu" class="w-full">
-            <div class="flex w-full items-center justify-center py-2">
-              <Icon name="material-symbols-light:favorite-outline" size="32" />
+          <div class="relative">
+            <button
+              @click="toggleMenu"
+              class="absolute -top-72 right-3 flex items-center justify-center"
+            >
+              <Icon name="material-symbols-light:close" size="36" />
+            </button>
+          </div>
+          <NuxtLink to="/favorites" @click="toggleMenu">
+            <div class="font-montserrat text-xl font-medium sm:text-2xl">
+              Избранное
             </div>
           </NuxtLink>
-          <NuxtLink to="/cart" @click="toggleMenu" class="relative w-full">
-            <div class="flex w-full items-center justify-center py-2">
-              <Icon name="bitcoin-icons:cart-outline" size="32" />
+          <NuxtLink to="/cart" @click="toggleMenu">
+            <div class="font-montserrat text-xl font-medium sm:text-2xl">
+              Корзина
             </div>
-            <div
+            <!-- <div
               class="absolute -top-[12px] left-[50%] flex h-4 w-4 -translate-x-1/2 transform items-center justify-center rounded-full bg-[#5810B5]"
             >
               <p class="text-xs text-[#FFFFFF]">2</p>
-            </div>
+            </div> -->
           </NuxtLink>
-          <NuxtLink to="/profile" @click="toggleMenu" class="w-full">
-            <div class="flex w-full items-center justify-center py-2">
-              <Icon name="lets-icons:user-alt-light" size="32" />
+          <NuxtLink to="/profile" @click="toggleMenu">
+            <div class="font-montserrat text-xl font-medium sm:text-2xl">
+              Профиль
             </div>
           </NuxtLink>
         </div>

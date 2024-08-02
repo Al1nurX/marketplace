@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-07-10",
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxtjs/google-fonts", 'nuxt-swiper'],
+  modules: ["@nuxt/ui", "@nuxtjs/google-fonts", 'nuxt-swiper', "vue3-carousel-nuxt"],
   googleFonts: {
     families: {
       Inter: [300, 400, 500, 600, 700, 900],
