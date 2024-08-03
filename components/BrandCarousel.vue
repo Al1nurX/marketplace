@@ -1,12 +1,4 @@
 <script setup>
-// import { Swiper, SwiperSlide } from "swiper/vue";
-// import { Pagination, Navigation, Mousewheel, Autoplay } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
-// import "swiper/css/autoplay";
-// import "swiper/css/mousewheel";
-
 const brands = [
   { name: "brand-1", logo: "brand-1.png" },
   { name: "brand-2", logo: "brand-2.png" },
@@ -17,67 +9,65 @@ const brands = [
   { name: "brand-7", logo: "brand-7.png" },
   { name: "brand-8", logo: "brand-8.png" },
 ];
-
-// const modules = [Autoplay, Pagination, Navigation, Mousewheel];
 </script>
 
 <template>
-  <div class="relative flex items-center justify-between">
-    <div class="slider-controler">
-      <div class="swiper-button-prev slider-arrow">
-        <img
-          src="/images/arrow-left-brand.svg"
-          alt="arrow-left"
-          class="h-[60px] w-[60px]"
-        />
+  <div
+    class="relative flex justify-center xs:mx-10 xs:items-end sm:mx-12 sm:items-stretch md:mx-14"
+  >
+    <div class="relative mr-4">
+      <div class="swiper-button-prev">
+        <img src="/images/arrow-left-brand.svg" alt="arrow-left" />
       </div>
     </div>
     <swiper
-      :slidesPerView="4"
-      :spaceBetween="30"
-      :css-mode="true"
+      :slides-per-view="4"
+      :space-between="30"
       :loop="true"
+      :speed="600"
+      :mousewheel="true"
       :autoplay="{
         delay: 15000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       }"
       :navigation="{
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       }"
-      :mousewheel="true"
-      :modules="[
-        SwiperAutoplay,
-        SwiperPagination,
-        SwiperNavigation,
-        SwiperMousewheel,
-      ]"
-      class="relative mb-[60px] w-full"
+      :breakpoints="{
+        350: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      }"
+      :modules="[SwiperAutoplay, SwiperNavigation, SwiperMousewheel]"
+      class="w-full"
     >
-      <swiper-slide v-for="(brand, index) in brands" :key="index" class="px-10">
+      <swiper-slide v-for="(brand, index) in brands" :key="index">
         <img
           :src="`/images/${brand.logo}`"
           :alt="brand.name"
-          class="h-[80px] w-[240px] object-contain grayscale transition duration-300 ease-in-out hover:grayscale-0"
+          class="w-full object-contain grayscale transition duration-300 ease-in-out hover:grayscale-0 xs:h-[35px] sm:h-[50px] md:h-[65px] lg:h-[80px]"
         />
       </swiper-slide>
     </swiper>
-    <div class="slider-controler">
-      <div class="swiper-button-next slider-arrow">
-        <img
-          src="/images/arrow-right-brand.svg"
-          alt="arrow-right"
-          class="h-[60px] w-[60px]"
-        />
+    <div class="relative ml-4">
+      <div class="swiper-button-next">
+        <img src="/images/arrow-right-brand.svg" alt="arrow-right" />
       </div>
     </div>
-    <!-- <div v-for="(brand, index) in brands" :key="index">
-      <img
-        :src="brand.logo"
-        :alt="brand.name"
-        class="h-[80px] w-[240px] object-contain grayscale filter transition duration-300 ease-in-out hover:grayscale-0 hover:filter"
-      />
-    </div> -->
   </div>
 </template>
 
@@ -90,16 +80,24 @@ const brands = [
   position: relative;
 }
 
-.swiper-button-next {
-  right: -10px;
-}
-
-.swiper-button-prev {
-  left: -10px;
-}
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "";
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
 }
 </style>

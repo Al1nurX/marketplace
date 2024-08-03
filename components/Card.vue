@@ -32,7 +32,9 @@ const toggleHeart = () => {
 <template>
   <div class="box-border flex h-full flex-col">
     <NuxtLink :to="to" class="text-center">
-      <div class="relative mb-5 w-full overflow-hidden xl:h-[400px]">
+      <div
+        class="relative mb-5 w-full overflow-hidden xs:h-[260px] sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[400px]"
+      >
         <img
           :src="imgSrc"
           :alt="alt"
@@ -62,15 +64,26 @@ const toggleHeart = () => {
           />
         </button>
       </div>
-      <p class="mb-9 font-montserrat text-xl font-semibold text-[#181818]">
-        {{ title }}
-      </p>
+      <div class="mb-9 flex items-center justify-center sm:h-8 md:h-10 lg:h-14">
+        <p
+          class="font-montserrat font-semibold text-[#181818] xs:text-lg lg:text-xl"
+        >
+          {{ title }}
+        </p>
+      </div>
     </NuxtLink>
     <div class="flex flex-col items-center">
-      <button class="rounded-[50px] bg-[#AE498C] px-14 py-[15px]">
+      <button
+        class="rounded-[50px] bg-[#AE498C] xs:px-6 xs:py-2 sm:px-8 md:px-10 md:py-3 lg:px-14 lg:py-[15px]"
+      >
         <div class="flex items-center gap-x-2 text-[#FFF]">
-          <Icon name="ic:outline-shopping-cart" size="24" />
-          <p class="font-montserrat text-base font-semibold">В корзину</p>
+          <Icon
+            name="ic:outline-shopping-cart"
+            class="xs:h-5 xs:w-5 md:h-6 md:w-6"
+          />
+          <p class="font-montserrat font-semibold xs:text-sm sm:text-base">
+            В корзину
+          </p>
         </div>
       </button>
     </div>

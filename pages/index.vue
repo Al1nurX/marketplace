@@ -93,10 +93,16 @@ const newProducts = products.slice(0, 3);
 <template>
   <main class="mt-[25px]">
     <MainCarousel />
-    <div class="my-10">
-      <p class="font-montserrat text-4xl font-medium text-[#181818]">Каталог</p>
+    <div class="xs:my-5 sm:my-6 md:my-8 lg:my-10">
+      <p
+        class="font-montserrat font-medium text-[#181818] xs:text-2xl sm:text-3xl lg:text-4xl"
+      >
+        Каталог
+      </p>
     </div>
-    <div class="mb-10 grid grid-cols-3 gap-6">
+    <div
+      class="grid grid-cols-1 gap-6 xs:mb-5 sm:mb-6 sm:grid-cols-2 md:mb-8 lg:mb-10 lg:grid-cols-3"
+    >
       <Catalog
         v-for="item in catalogItems"
         :key="item.id"
@@ -106,16 +112,24 @@ const newProducts = products.slice(0, 3);
         alt="Content"
       />
     </div>
-    <div class="mb-12 flex items-center justify-between pt-5">
-      <p class="font-montserrat text-4xl font-light text-[#000]">Новинки</p>
+    <div
+      class="flex items-center justify-between pt-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+    >
+      <p
+        class="font-montserrat font-light text-[#000] xs:text-2xl sm:text-3xl lg:text-4xl"
+      >
+        Новинки
+      </p>
       <NuxtLink
         to="/catalog/new"
-        class="rounded-3xl bg-[#5810B5] px-11 py-2 font-montserrat text-xl font-semibold text-[#FFF]"
+        class="rounded-3xl bg-[#5810B5] font-montserrat font-semibold text-[#FFF] xs:px-7 xs:py-1 sm:px-9 sm:text-lg md:px-11 md:py-2 md:text-xl"
       >
         Больше
       </NuxtLink>
     </div>
-    <div class="mb-10 grid grid-cols-3 gap-x-10">
+    <div
+      class="grid grid-cols-1 xs:mb-5 xs:gap-10 sm:mb-6 sm:grid-cols-2 sm:gap-x-6 md:mb-8 lg:mb-10 lg:grid-cols-3 lg:gap-x-8 xl:gap-x-10"
+    >
       <Card
         v-for="product in newProducts"
         :key="product.id"
@@ -126,16 +140,24 @@ const newProducts = products.slice(0, 3);
         alt="Card"
       />
     </div>
-    <div class="mb-12 flex items-center justify-between pt-5">
-      <p class="font-montserrat text-4xl font-light text-[#000]">Акции</p>
+    <div
+      class="flex items-center justify-between pt-5 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+    >
+      <p
+        class="font-montserrat font-light text-[#000] xs:text-2xl sm:text-3xl lg:text-4xl"
+      >
+        Акции
+      </p>
       <NuxtLink
         to="/catalog/promotions"
-        class="rounded-3xl bg-[#51E028] px-11 py-2 font-montserrat text-xl font-semibold text-[#FFF]"
+        class="rounded-3xl bg-[#51E028] font-montserrat font-semibold text-[#FFF] xs:px-7 xs:py-1 sm:px-9 sm:text-lg md:px-11 md:py-2 md:text-xl"
       >
         Больше
       </NuxtLink>
     </div>
-    <div class="mb-10 grid grid-cols-3 gap-x-10">
+    <div
+      class="mb-10 grid grid-cols-1 xs:gap-10 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 xl:gap-x-10"
+    >
       <Card
         v-for="product in newProducts"
         :key="product.id"
@@ -146,7 +168,7 @@ const newProducts = products.slice(0, 3);
         alt="Card"
       />
     </div>
-    <div class="-mb-4 pt-24">
+    <div class="mt-36">
       <BrandCarousel />
     </div>
   </main>
