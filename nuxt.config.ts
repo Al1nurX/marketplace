@@ -5,9 +5,9 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "@nuxtjs/google-fonts", "nuxt-swiper"],
   googleFonts: {
     families: {
-      Inter: true,
-      Montserrat: true,
-      Roboto: true,
+      Inter: [300, 400, 500, 600, 700, 900],
+      Montserrat: [300, 400, 500, 600, 700, 900],
+      Roboto: [300, 400, 500, 600, 700, 900],
     },
   },
   colorMode: {
