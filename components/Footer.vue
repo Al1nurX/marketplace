@@ -69,12 +69,12 @@
       </div>
       <div class="flex flex-col">
         <p
-          class="font-inter font-normal text-[#5810B5] xs:mb-2 sm:mb-3 md:text-lg lg:mb-4 lg:text-[19px] xl:text-[20px]"
+          class="font-inter font-normal text-[#5810B5] xs:mb-3 md:text-lg lg:mb-4 lg:text-[19px] xl:text-[20px]"
         >
           Быть в курсе событий!
         </p>
         <div
-          class="relative xs:mb-3 xs:w-56 sm:mb-5 sm:w-64 md:w-72 lg:mb-7 lg:w-full"
+          class="relative xs:mb-4 xs:w-56 sm:mb-5 sm:w-64 md:w-72 lg:mb-7 lg:w-full"
         >
           <input
             type="email"

@@ -153,12 +153,12 @@ const categoryTitle = computed(
 
 <template>
   <main class="w-full xs:mt-4 sm:mt-5 md:mt-6 lg:mt-8">
-    <div class="flex flex-wrap xs:mb-3 sm:mb-4 md:mb-5 lg:mb-6">
-      <p class="font-inter text-base font-medium text-[#B3B3B3]">
+    <div class="flex flex-wrap xs:mb-4 md:mb-5 lg:mb-6">
+      <p class="font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base">
         Главная - Каталог -
       </p>
       <p
-        class="w-full font-inter text-base font-medium text-[#E4CCFF] xs:w-auto sm:ml-1"
+        class="w-full font-inter font-medium text-[#E4CCFF] xs:w-auto xs:text-sm sm:ml-1 sm:text-base"
       >
         {{ categoryTitle }}
       </p>

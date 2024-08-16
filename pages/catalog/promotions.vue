@@ -65,13 +65,19 @@ const products = [
 
 <template>
   <main class="mt-8 w-full">
-    <div class="mb-6 flex">
-      <p class="font-inter text-base font-medium text-[#B3B3B3]">
+    <div class="flex xs:mb-4 md:mb-5 lg:mb-6">
+      <p class="font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base">
         Главная - Каталог -
       </p>
-      <p class="ml-1 font-inter text-base font-medium text-[#E4CCFF]">Акции</p>
+      <p
+        class="ml-1 font-inter font-medium text-[#E4CCFF] xs:text-sm sm:text-base"
+      >
+        Акции
+      </p>
     </div>
-    <section class="grid w-full grid-cols-3 gap-x-10 gap-y-16">
+    <section
+      class="grid grid-cols-1 xs:gap-10 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14 xl:gap-x-10 xl:gap-y-16"
+    >
       <Card
         v-for="product in products"
         :key="product.id"
