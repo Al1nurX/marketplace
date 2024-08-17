@@ -10,7 +10,7 @@ const categories = {
   "ofisnaya-mebel": "Офисная мебель",
   "demonstracionnye-oborudovanie": "Демонстрационные оборудование",
   "bytovaya-himija": "Бытовая химия",
-  "kоzhgalantereya": "Кожгалантерея",
+  kоzhgalantereya: "Кожгалантерея",
   "gosudarstvennaya-simbolika": "Государственная символика",
 };
 
@@ -102,16 +102,31 @@ const value = ref();
 
 <template>
   <main class="mt-8 w-full">
-    <div class="mb-4 flex">
-      <p class="font-inter text-base font-medium text-[#B3B3B3]">
-        Главная - Каталог - {{ categoryTitle }} -
-      </p>
-      <p class="ml-1 font-inter text-base font-medium text-[#E4CCFF]">
-        {{ subCategoryTitle }}
-      </p>
+    <div class="mb-6 flex">
+      <div class="flex flex-wrap">
+        <p
+          class="mr-1 font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base"
+        >
+          Главная - Каталог -
+        </p>
+        <div class="flex flex-wrap space-x-1">
+          <p
+            class="whitespace-nowrap font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base"
+          >
+            {{ categoryTitle }} -
+          </p>
+          <p
+            class="whitespace-nowrap font-inter font-medium text-[#E4CCFF] xs:text-sm sm:text-base"
+          >
+            {{ subCategoryTitle }}
+          </p>
+        </div>
+      </div>
     </div>
-    <div class="mb-8 flex justify-end">
-      <div class="w-1/5">
+    <div class="mb-8 justify-end xs:hidden sm:flex">
+      <div
+        class="xs:min-w-[50%] xs:max-w-[68%] sm:w-[35%] sm:min-w-0 md:w-[28%] lg:w-[24%] xl:w-1/5"
+      >
         <USelectMenu
           v-slot="{ open }"
           v-model="selected"
@@ -120,7 +135,7 @@ const value = ref();
         >
           <UButton
             color="gray"
-            class="flex-1 justify-between font-montserrat text-base"
+            class="flex-1 justify-between font-montserrat xs:text-sm sm:text-base"
           >
             {{ selected }}
             <UIcon
@@ -132,7 +147,9 @@ const value = ref();
         </USelectMenu>
       </div>
     </div>
-    <section class="grid w-full grid-cols-3 gap-x-10 gap-y-16">
+    <section
+      class="grid grid-cols-1 xs:gap-10 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14 xl:gap-x-10 xl:gap-y-16"
+    >
       <aside class="flex w-2/3 flex-col">
         <p class="mb-4 font-roboto font-medium text-[#000] xl:text-xl">
           Стоимость
@@ -176,7 +193,7 @@ const value = ref();
               class="h-6 w-6"
             />
           </div>
-					<div class="flex cursor-pointer items-center justify-between">
+          <div class="flex cursor-pointer items-center justify-between">
             <p class="font-roboto font-medium text-[#000] xl:text-xl">Бренд</p>
             <img
               src="/images/arrow-down.svg"
@@ -184,7 +201,7 @@ const value = ref();
               class="h-6 w-6"
             />
           </div>
-					<div class="flex cursor-pointer items-center justify-between">
+          <div class="flex cursor-pointer items-center justify-between">
             <p class="font-roboto font-medium text-[#000] xl:text-xl">Бренд</p>
             <img
               src="/images/arrow-down.svg"
@@ -194,6 +211,30 @@ const value = ref();
           </div>
         </div>
       </aside>
+      <div class="justify-end xs:flex sm:hidden">
+        <div
+          class="xs:min-w-[50%] xs:max-w-[68%] sm:w-[35%] sm:min-w-0 md:w-[28%] lg:w-[24%] xl:w-1/5"
+        >
+          <USelectMenu
+            v-slot="{ open }"
+            v-model="selected"
+            :options="findBy"
+            class="font-montserrat"
+          >
+            <UButton
+              color="gray"
+              class="flex-1 justify-between font-montserrat xs:text-sm sm:text-base"
+            >
+              {{ selected }}
+              <UIcon
+                name="i-heroicons-chevron-right-20-solid"
+                class="h-5 w-5 text-gray-400 transition-transform dark:text-gray-500"
+                :class="[open && 'rotate-90 transform']"
+              />
+            </UButton>
+          </USelectMenu>
+        </div>
+      </div>
       <Card
         v-for="product in products"
         :key="product.id"

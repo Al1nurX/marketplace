@@ -164,7 +164,7 @@ const changePage = (page) => {
     <MainCarousel />
     <div class="my-14 text-center">
       <p
-        class="inline-block rounded-full border-2 border-solid border-[#51E028] px-3 py-1 font-montserrat text-3xl font-bold text-[#5810B5]"
+        class="inline-block rounded-full border-2 border-solid border-[#51E028] py-1 font-montserrat font-bold text-[#5810B5] xs:px-3 sm:text-xl md:text-2xl lg:text-3xl"
       >
         Открой горизонты с нашими канцелярскими новинками!
       </p>

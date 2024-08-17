@@ -214,7 +214,7 @@ const catalogItems = [
         class="flex justify-center border-r border-solid border-[#FFF] bg-[#5810B5] transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
-          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-1 xs:text-sm sm:py-2 sm:text-base md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
+          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-2 xs:text-sm sm:text-base md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
         >
           Каталог
         </p>
@@ -223,7 +223,7 @@ const catalogItems = [
         class="border-r border-solid border-[#FFF] bg-[#5810B5] text-center transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
-          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-1 xs:text-sm sm:py-2 sm:text-base md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
+          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-2 xs:text-sm sm:text-base md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
         >
           Адрес
         </p>
@@ -232,7 +232,7 @@ const catalogItems = [
         class="bg-[#5810B5] text-center transition duration-[400ms] ease-in-out hover:bg-[#51E028]"
       >
         <p
-          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-1 xs:text-sm sm:py-2 sm:text-base md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
+          class="font-alegreya-sans-sc font-extrabold text-[#FFF] xs:py-2 xs:text-sm sm:text-base md:py-3 lg:py-4 lg:text-lg xl:py-5 xl:text-xl"
         >
           Коллекции
         </p>

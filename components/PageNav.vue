@@ -28,14 +28,16 @@ const changePage = (page) => {
 </script>
 
 <template>
-  <div class="mt-20 flex items-center justify-around">
+  <div
+    class="mt-20 flex justify-around xs:flex-col xs:gap-y-5 md:flex-row md:items-center md:gap-y-0"
+  >
     <div class="flex items-center">
-      <p class="mr-10 font-roboto text-xl font-medium text-[#000]">Страницы:</p>
+      <p class="md:mr-10 xs:mr-5 font-roboto text-xl font-medium text-[#000]">Страницы:</p>
       <nav class="flex space-x-2">
         <button
           v-if="currentPage > 1"
           @click="changePage(currentPage - 1)"
-          class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#E4CCFF] bg-[#FFF] font-roboto text-base font-medium text-[#000] transition duration-300 ease-in-out hover:bg-[#E4CCFF]"
+          class="flex h-8 w-8 rotate-180 items-center justify-center rounded-full border-2 border-[#E4CCFF] bg-[#FFF] font-roboto text-base font-medium text-[#000] transition duration-300 ease-in-out hover:bg-[#E4CCFF]"
         >
           <img src="/images/arrow-page.svg" alt="arrow" />
         </button>
