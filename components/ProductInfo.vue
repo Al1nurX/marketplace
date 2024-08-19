@@ -63,9 +63,9 @@ const decrementCount = () => {
 
 <template>
   <main>
-    <div class="flex gap-x-10 xl:h-[540px]">
+    <div class="flex lg:gap-x-10 md:gap-x-8 md:h-[380px] lg:h-[480px] xl:h-[520px]">
       <div
-        class="group relative flex h-full overflow-hidden rounded-md border border-gray-200 xl:w-[610px]"
+        class="group relative flex h-full overflow-hidden rounded-md border border-gray-200 md:w-[350px] lg:w-[520px] xl:w-[580px]"
       >
         <div
           :style="{ backgroundImage: `url(${mainImage})` }"
@@ -78,10 +78,10 @@ const decrementCount = () => {
               :src="image"
               @click="setMainImage(image, index)"
               alt="ФОТО ТОВАРА"
-              class="h-[100px] w-[100px] cursor-pointer rounded-md border border-gray-300 object-cover opacity-50 transition duration-300 ease-in-out hover:scale-105 group-hover:opacity-100"
+              class="cursor-pointer rounded-md border border-gray-300 object-cover opacity-50 transition duration-300 ease-in-out hover:scale-105 group-hover:opacity-100 md:h-[80px] md:w-[80px] lg:h-[100px] lg:w-[100px]"
             />
           </div>
-          <button class="absolute right-8 top-8" @click="toggleHeart">
+          <button class="absolute lg:right-8 lg:top-8 md:right-6 md:top-6" @click="toggleHeart">
             <img
               :src="
                 isHeartClicked ? '/images/liked-heart.svg' : '/images/heart.svg'
@@ -96,56 +96,71 @@ const decrementCount = () => {
           </button>
         </div>
       </div>
-      <div class="flex h-full w-2/5 flex-col">
+      <div class="flex h-full md:flex-1 lg:flex-none lg:w-2/5 flex-col">
         <div class="flex flex-grow flex-col justify-between">
-          <p class="w-2/3 font-inter text-3xl font-medium text-[#000]">
+          <p
+            class="font-inter font-medium text-[#000] md:text-2xl xs:w-[95%] lg:w-4/5 lg:text-3xl xl:w-2/3"
+          >
             {{ title }}
           </p>
-          <p class="w-4/5 font-inter text-base text-[#000]">
+          <p class="font-inter text-base text-[#000] xs:w-[95%] lg:w-4/5">
             {{ description }}
           </p>
           <div class="flex items-center gap-x-2">
             <img src="/images/star.svg" alt="rating" />
-            <p class="font-inter text-xl text-[#000]">{{ rating }}</p>
+            <p class="font-inter text-[#000] sm:text-lg lg:text-xl">
+              {{ rating }}
+            </p>
           </div>
           <div class="flex items-center gap-x-3">
             <button
               @click="decrementCount"
-              class="flex h-8 w-8 items-center justify-center rounded-l-sm bg-[#E5E5E5] p-1"
+              class="flex items-center justify-center rounded-l-sm bg-[#E5E5E5] p-1 md:h-7 md:w-7 lg:h-8 lg:w-8"
             >
               <img src="/images/minus.svg" alt="minus" />
             </button>
-            <p class="w-10 text-center font-inter text-xl text-[#000]">
+            <p
+              class="w-10 text-center font-inter text-[#000] sm:text-lg lg:text-xl"
+            >
               {{ count }}
             </p>
             <button
               @click="count++"
-              class="flex h-8 w-8 items-center justify-center rounded-r-sm bg-[#E5E5E5] p-1"
+              class="flex items-center justify-center rounded-r-sm bg-[#E5E5E5] p-1 md:h-7 md:w-7 lg:h-8 lg:w-8"
             >
               <img src="/images/plus.svg" alt="plus" class="h-6 w-6" />
             </button>
           </div>
-
           <div class="flex items-center gap-x-2">
-            <p class="font-inter text-2xl font-medium text-[#000]">Цена:</p>
-            <p class="font-inter text-2xl text-[#000]">{{ price }} тг</p>
+            <p
+              class="font-inter font-medium text-[#000] sm:text-xl lg:text-2xl"
+            >
+              Цена:
+            </p>
+            <p class="font-inter text-[#000] sm:text-xl lg:text-2xl">
+              {{ price }} тг
+            </p>
           </div>
           <button
-            class="w-full rounded-sm bg-[#AE498C] py-4 text-center font-roboto text-xl font-semibold text-[#FFF]"
+            class="w-full rounded-sm bg-[#AE498C] text-center font-roboto font-semibold text-[#FFF] sm:py-2 sm:text-lg lg:py-4 lg:text-xl"
           >
             В корзину
           </button>
         </div>
-        <div class="mt-14 flex flex-col">
-          <p class="font-inter text-xl text-[#BABABA]">Есть в наличии</p>
-          <div class="mt-3 flex gap-x-16">
+        <div class="flex flex-col md:mt-5 lg:mt-14">
+          <p class="font-inter text-[#BABABA] sm:text-lg lg:text-xl">
+            Есть в наличии
+          </p>
+          <div class="mt-3 flex md:gap-x-14 lg:gap-x-16">
             <div class="flex items-center gap-x-3">
               <img src="/images/exist.svg" alt="exist" class="h-6 w-6" />
-              <p class="font-inter text-xl text-[#000]">Оптом</p>
+              <p class="font-inter text-[#000] sm:text-lg lg:text-xl">Оптом</p>
             </div>
             <div class="flex items-center gap-x-3">
               <img src="/images/exist.svg" alt="exist" class="h-6 w-6" />
-              <p class="font-inter text-xl text-[#000]">В розницу</p>
+              <p class="font-inter text-[#000] sm:text-lg lg:text-xl">
+                В розницу
+              </p>
             </div>
           </div>
         </div>
