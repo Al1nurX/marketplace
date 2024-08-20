@@ -20,6 +20,10 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  customHeights: {
+    type: String,
+    required: false,
+  },
 });
 
 const isHeartClicked = ref(false);
@@ -33,7 +37,12 @@ const toggleHeart = () => {
   <div class="box-border flex h-full flex-col">
     <NuxtLink :to="to" class="text-center">
       <div
-        class="relative mb-5 w-full overflow-hidden xs:h-[260px] sm:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[400px]"
+        class="relative mb-5 w-full overflow-hidden"
+        :class="{
+          'xs:h-[280px] md:h-[300px] lg:h-[320px] xl:h-[400px]':
+            !customHeights,
+          [customHeights]: customHeights,
+        }"
       >
         <img
           :src="imgSrc"
@@ -56,7 +65,7 @@ const toggleHeart = () => {
               isHeartClicked ? '/images/liked-heart.svg' : '/images/heart.svg'
             "
             alt="favorite"
-            class="h-[28px] w-[28px] cursor-pointer"
+            class="cursor-pointer xs:h-6 xs:w-6 sm:h-[28px] sm:w-[28px]"
             :class="{
               grayscale: !isHeartClicked,
               'hover:grayscale-0': !isHeartClicked,

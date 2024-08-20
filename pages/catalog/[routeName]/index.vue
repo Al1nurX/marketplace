@@ -158,7 +158,7 @@ const categoryTitle = computed(
         Главная - Каталог -
       </p>
       <p
-        class="w-full font-inter font-medium text-[#E4CCFF] xs:w-auto xs:text-sm sm:ml-1 sm:text-base"
+        class="w-full font-inter font-medium text-[#E4CCFF] xs:ml-1 xs:w-auto xs:text-sm sm:text-base"
       >
         {{ categoryTitle }}
       </p>

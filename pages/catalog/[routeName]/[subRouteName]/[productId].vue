@@ -115,14 +115,27 @@ const relatedProducts = computed(() => {
 </script>
 
 <template>
-  <main class="mt-8 w-full flex flex-col min-h-screen">
+  <main class="mt-8 flex min-h-screen w-full flex-col">
     <div class="mb-8 flex">
-      <p class="font-inter text-base font-medium text-[#B3B3B3]">
-        Главная - Каталог - {{ categoryTitle }} -
-      </p>
-      <p class="ml-1 font-inter text-base font-medium text-[#E4CCFF]">
-        {{ subCategoryTitle }}
-      </p>
+      <div class="flex flex-wrap">
+        <p
+          class="mr-1 font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base"
+        >
+          Главная - Каталог -
+        </p>
+        <div class="flex flex-wrap space-x-1">
+          <p
+            class="whitespace-nowrap font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base"
+          >
+            {{ categoryTitle }} -
+          </p>
+          <p
+            class="whitespace-nowrap font-inter font-medium text-[#E4CCFF] xs:text-sm sm:text-base"
+          >
+            {{ subCategoryTitle }}
+          </p>
+        </div>
+      </div>
     </div>
     <div v-if="product">
       <ProductInfo
@@ -133,7 +146,7 @@ const relatedProducts = computed(() => {
       />
     </div>
     <div class="flex-grow">
-			<Moreover :products="relatedProducts" />
-		</div>
+      <Moreover :products="relatedProducts" />
+    </div>
   </main>
 </template>

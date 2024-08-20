@@ -37,7 +37,7 @@ const brands = [
       :breakpoints="{
         350: {
           slidesPerView: 2,
-          spaceBetween: 10,
+          spaceBetween: 5,
         },
         640: {
           slidesPerView: 3,
@@ -85,19 +85,11 @@ const brands = [
   content: "";
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .swiper-button-next,
   .swiper-button-prev {
     width: 40px;
     height: 40px;
-  }
-}
-
-@media (max-width: 640px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    width: 30px;
-    height: 30px;
   }
 }
 </style>
