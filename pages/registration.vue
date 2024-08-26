@@ -1,11 +1,13 @@
 <script setup>
 definePageMeta({
-  layout: 'none',
+  layout: "none",
 });
 </script>
 
 <template>
-  <div class="flex min-h-screen items-center justify-center w-screen -mx-[60px] bg-gradient-to-r from-slate-300 to-slate-500">
+  <div
+    class="-mx-[60px] flex min-h-screen w-screen items-center justify-center bg-gradient-to-r from-gray-500 to-yellow-600"
+  >
     <LoginRegister />
   </div>
 </template>

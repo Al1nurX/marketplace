@@ -10,15 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.18.2",
+    "@nuxt/ui": "^2.18.4",
     "@nuxtjs/google-fonts": "^3.2.0",
     "nuxt": "^3.12.4",
     "nuxt-swiper": "^1.2.2",
-    "vue": "^3.4.34"
+    "vue": "^3.4.38"
   },
   "devDependencies": {
     "daisyui": "^4.12.10",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.5"
+    "prettier-plugin-tailwindcss": "^0.6.6"
   }
 }

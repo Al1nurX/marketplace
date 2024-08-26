@@ -31,8 +31,41 @@ const validate = () => {
 };
 
 async function onSubmit(event) {
-  // Do something with data
-  console.log(event.data);
+  event.preventDefault();
+
+  const errors = validate();
+  if (errors.length > 0) {
+    console.log(errors);
+    return;
+  }
+
+  const apiUrl = `http://192.168.1.1:4000/api/login`;
+
+  const payload = {
+    telephone: phone.value,
+    password: password.value,
+  };
+  console.log("Payload being sent:", payload);
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    console.log(response);
+
+    if (response.ok) {
+      console.log("Login successful:");
+    } else {
+      const errorText = await response.text();  // Capture the error text
+      console.error("Login failed:", errorText);  // Log the error text
+    }
+  } catch (error) {
+    console.error("An error occurred during log in:", error);
+  }
 }
 </script>
 

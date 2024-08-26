@@ -1,5 +1,10 @@
 <script setup>
 const route = useRoute();
+
+const { data: products} = await useFetch(async () => {
+  return fetch(`http://192.168.1.1:4000/api/${route.params.routeName}`);
+});
+
 const categories = {
   "pismennye-prinadlezhnosti": "Письменные принадлежности",
   "bumazhnaia-produkcia": "Бумажная продукция",
@@ -81,69 +86,6 @@ const categoriesItems = [
   },
 ];
 
-const products = [
-  {
-    id: "1",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "ruchki",
-    title: "Ручка гелиевая - синий стержень 0,5",
-    description:
-      "Гелиевая ручка Factor с колпачком в пластиковом серебристом корпусе, синие чернила, тонкая линия",
-    rating: "3.5",
-    price: "250",
-  },
-  {
-    id: "2",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "ruchki",
-    title: "Ручка гелевая",
-  },
-  {
-    id: "3",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "karandashi",
-    title: "Карандаш",
-  },
-  {
-    id: "4",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "ruchki",
-    title: "Ручка шариковая",
-  },
-  {
-    id: "5",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "ruchki",
-    title: "Ручка гелевая",
-  },
-  {
-    id: "6",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "karandashi",
-    title: "Карандаш",
-  },
-  {
-    id: "7",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "ruchki",
-    title: "Ручка шариковая",
-  },
-  {
-    id: "8",
-    catId: "1",
-    catRouteName: "pismennye-prinadlezhnosti",
-    routeName: "ruchki",
-    title: "Ручка гелевая",
-  },
-];
-
 const categoryRouteName = computed(() => route.params.routeName);
 
 const categoryTitle = computed(
@@ -153,17 +95,17 @@ const categoryTitle = computed(
 
 <template>
   <main class="w-full xs:mt-4 sm:mt-5 md:mt-6 lg:mt-8">
-    <div class="flex flex-wrap xs:mb-4 md:mb-5 lg:mb-6">
+    <div class="flex flex-wrap gap-x-1">
       <p class="font-inter font-medium text-[#B3B3B3] xs:text-sm sm:text-base">
         Главная - Каталог -
       </p>
-      <p
-        class="w-full font-inter font-medium text-[#E4CCFF] xs:ml-1 xs:w-auto xs:text-sm sm:text-base"
-      >
+      <p class="font-inter font-medium text-[#E4CCFF] xs:text-sm sm:text-base">
         {{ categoryTitle }}
       </p>
     </div>
-
+    <div class="my-8">
+      <CategoryCarousel />
+    </div>
     <section
       class="grid grid-cols-1 xs:gap-10 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14 xl:gap-x-10 xl:gap-y-16"
     >

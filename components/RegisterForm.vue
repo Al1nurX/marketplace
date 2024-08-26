@@ -99,7 +99,88 @@ const validate = () => {
 };
 
 async function onSubmit(event) {
-  console.log(event.data);
+  event.preventDefault();
+
+  const errors = validate();
+  if (errors.length > 0) {
+    console.log(errors);
+    return;
+  }
+
+  const apiUrl = `http://192.168.1.1:4000/api/create-client`;
+
+  const payload = {
+    telephone: phone.value,
+    password: password.value,
+  };
+  console.log("Payload being sent:", payload);
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    console.log(response);
+
+    if (response.ok) {
+      console.log("Registration successful:");
+    } else {
+      const errorText = await response.text(); // Capture the error text
+      console.error("Registration failed:", errorText); // Log the error text
+    }
+  } catch (error) {
+    console.error("An error occurred during registration:", error);
+  }
+}
+
+async function onSubmitr(event) {
+  event.preventDefault();
+
+  const errors = validate();
+  if (errors.length > 0) {
+    console.log(errors);
+    return;
+  }
+
+  const apiUrl = `http://192.168.1.1/api/create-client-law`;
+
+  const payload = {
+    company_name: companyName.value,
+    contact_name: contactPerson.value,
+    password: password.value,
+    law_address: legalAddress.value,
+    email: email.value,
+    phone: phone.value,
+    bin: parseInt(bin.value, 10),
+    bik: parseInt(bic.value, 10),
+    iik: parseInt(iik.value, 10),
+    bank: bank.value,
+  };
+
+  console.log("Payload being sent:", payload);
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    console.log(response);
+
+    if (response.ok) {
+      console.log("Registration successful:");
+    } else {
+      const errorText = await response.text(); // Capture the error text
+      console.error("Registration failed:", errorText); // Log the error text
+    }
+  } catch (error) {
+    console.error("An error occurred during registration:", error);
+  }
 }
 
 const nextStep = () => {
@@ -285,6 +366,22 @@ const prevStep = () => {
             <UInput v-model="state.phone" style="padding: 0.4rem" />
           </UFormGroup>
 
+          <UFormGroup label="Пароль" name="password">
+            <UInput
+              v-model="state.password"
+              type="password"
+              style="padding: 0.4rem"
+            />
+          </UFormGroup>
+
+          <UFormGroup label="Подтвердите пароль" name="confirmPassword">
+            <UInput
+              v-model="state.confirmPassword"
+              type="password"
+              style="padding: 0.4rem"
+            />
+          </UFormGroup>
+
           <div class="!mb-12 !mt-10 flex gap-x-4">
             <UButton
               type="button"
@@ -309,7 +406,7 @@ const prevStep = () => {
           :validate="validate"
           :state="state"
           class="space-y-5"
-          @submit="onSubmit"
+          @submit="onSubmitr"
         >
           <UFormGroup label="БИН" name="bin" class="!mt-6">
             <UInput v-model="state.bin" style="padding: 0.4rem" />

@@ -18,7 +18,9 @@ const decrementCount = () => {
       <p class="font-inter text-xl text-[#000]">Количество</p>
       <p class="font-inter text-xl text-[#000]">Цена</p>
     </div>
-    <div class="-mx-[60px] mt-10 w-screen bg-[#F5F5F7] px-[60px]">
+    <div
+      class="mt-10 w-screen bg-[#F5F5F7] px-[60px] xs:-mx-[20px] sm:-mx-[30px] md:-mx-[40px] xl:-mx-[60px]"
+    >
       <div class="flex items-center justify-between gap-x-6 py-4">
         <input
           type="checkbox"
@@ -84,7 +86,9 @@ const decrementCount = () => {
           <p class="font-inter text-xl text-[#000]">Итого</p>
           <p class="font-inter text-xl text-[#000]">{{ 250 * count }} тг</p>
         </div>
-        <button class="rounded-lg bg-[#AE498C] font-bold font-inter px-6 py-[10px] text-white">
+        <button
+          class="rounded-lg bg-[#AE498C] px-6 py-[10px] font-inter font-bold text-white"
+        >
           Оформить заказ
         </button>
       </div>
